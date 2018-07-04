@@ -5,6 +5,19 @@
   tags:
       - config
 
+- name: Create cache directory
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: leofs
+    group: leofs
+  with_items:
+      - "{{ leo_gateway_dcache_path }}"
+      - "{{ leo_gateway_dcache_journal }}"
+  when: (do_purge is undefined or do_purge == false) and get_log is undefined
+  tags:
+      - config
+
 - name: Include Control Tasks
   include: control.yml
   when: control_leofs is defined

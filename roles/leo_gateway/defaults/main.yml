@@ -38,8 +38,8 @@ leo_gateway_mcache_workers: 16
 leo_gateway_mcache_size:    268435456
 leo_gateway_dcache_size:    524288000
 leo_gateway_dcache_thres:   1048576
-leo_gateway_dcache_path:    "./cache/data"
-leo_gateway_dcache_journal: "./cache/journal"
+leo_gateway_dcache_path:    "{{ leofs_module_path }}/cache/data"
+leo_gateway_dcache_journal: "{{ leofs_module_path }}/cache/journal"
 leo_gateway_http_cache_expire:   300
 leo_gateway_http_cache_max_len:  1048576
 # leo_gateway_http_cache_cachable_type:   
